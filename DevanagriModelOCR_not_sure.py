@@ -19,7 +19,7 @@ trainDataGen = ImageDataGenerator(
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 trainGenerator = trainDataGen.flow_from_directory(
-			"C:\Users\Devashish Bhake\Desktop\Computer Vision\Devnagri Text Dataset\DevanagariHandwrittenCharacterDataset\DevanagariHandwrittenCharacterDataset\Train",
+			r"C:\Users\Devashish Bhake\Desktop\Computer Vision\Devnagri Text Dataset\DevanagariHandwrittenCharacterDataset\DevanagariHandwrittenCharacterDataset\Train",
 			target_size = (32,32),
 			batch_size = 32,
 			color_mode = "grayscale",
@@ -41,7 +41,7 @@ print count
 '''
 
 validation_generator = test_datagen.flow_from_directory(
-			"/home/owner/Downloads/DevanagariHandwrittenCharacterDataset/Test",
+			r"C:\Users\Devashish Bhake\Desktop\Computer Vision\Devnagri Text Dataset\DevanagariHandwrittenCharacterDataset\DevanagariHandwrittenCharacterDataset\Train",
 			target_size=(32,32),
 			batch_size=32,
 			color_mode = "grayscale",
@@ -100,13 +100,12 @@ model.compile(optimizer = "adam",
 		
 print model.summary()
 
-model.fit_generator(
+model.fit(
 		trainGenerator,
 		nb_epoch = 20,
 		steps_per_epoch = 2444,
 		validation_data = validation_generator,
-		validation_steps = 432,
-		use_multiprocessing = True
+		validation_steps = 432
 		)
 		
-model.save("DevaModel.h5")
+model.save("DevanagariModel.h5")
