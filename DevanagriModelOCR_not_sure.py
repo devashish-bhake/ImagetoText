@@ -25,7 +25,7 @@ trainGenerator = trainDataGen.flow_from_directory(
 			color_mode = "grayscale",
 			class_mode = "categorical")
 prev = ""
-labels = ["ka","kha","ga","gha","kna","cha","chha","ja","jha","yna","t`a","t`ha","d`a","d`ha","adna","ta","tha","da","dha","na","pa","pha","ba","bha","ma","yaw","ra","la","waw","sha","shat","sa","ha","aksha","tra","gya","0","1","2","3","4","5","6","7","8","9"]
+labels = ["ka","kha","ga","gha","kna","cha","chha","ja","jha","yna","ta","tha","da","dha","adna","ta","tha","da","dha","na","pa","pha","ba","bha","ma","yaw","ra","la","waw","sha","shat","sa","ha","aksha","tra","gya","0","1","2","3","4","5","6","7","8","9"]
 count = 0;
 
 # get the count of all the images in each of the labels
